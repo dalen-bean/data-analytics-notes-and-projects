@@ -1,0 +1,15 @@
+logan,brigham-city,15
+brigham-city,ogden,30
+ogden,salt-lake-city,45
+salt-lake-city,provo,60
+provo, st-george,199
+salt-lake-city,parkcity,35
+wendover,salt-lake-city,93
+brigham-city,logan,15
+ogden,brigham-city,30
+salt-lake-city,ogden,45
+provo,salt-lake-city,60
+st-george,provo,199
+parkcity,salt-lake-city,35
+salt-lake-city,wendover,93
+logan,ogden,90

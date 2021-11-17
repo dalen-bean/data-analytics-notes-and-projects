@@ -22,7 +22,7 @@ def simplemovingaverage(prices):
                     pass
                 else:
                     if i == len(prices) -1:
-                        print(ticker, "Buy today at:", buy, " SM")
+                        print("SM", ticker, "Buy today at:", buy)
                     tot_profit += sell - buy
                     
             elif price < avrage and position != -1:
@@ -32,7 +32,7 @@ def simplemovingaverage(prices):
                     pass
                 else:
                     if i == len(prices) -1:
-                        print(ticker, "Sell today at:", sell, " SM")
+                        print("SM", ticker, "Sell today at:", sell)
                     tot_profit += sell - buy
                     
             else:
@@ -40,7 +40,7 @@ def simplemovingaverage(prices):
             
         i += 1
         tot_profit = round(tot_profit,2)
-    print(ticker, "Total profit: ", tot_profit, " SM")
+    print("SM", ticker, "Total profit: ", tot_profit)
     return round((tot_profit),2), round(tot_profit / prices[0],2)
     
 def meanreversion(prices):
@@ -61,7 +61,7 @@ def meanreversion(prices):
                     pass
                 else:
                     if i == len(prices) -1:
-                        print(ticker, "Buy today at:", buy, " MR")
+                        print("MR", ticker, "Buy today at:", buy)
                     tot_profit += sell - buy
                     
             elif price > avrage*1.05 and position != -1:
@@ -71,14 +71,14 @@ def meanreversion(prices):
                     pass
                 else:
                     if i == len(prices) -1:
-                        print(ticker, "Sell today at:", sell, " MR")
+                        print("MR",ticker, "Sell today at:", sell)
                     tot_profit += sell - buy
             else:
                 pass
                 
         i += 1
         tot_profit = round(tot_profit,2)
-    print(ticker, "Total profit: ", tot_profit, " MR")
+    print("MR", ticker, "Total profit: ", tot_profit)
     return round((tot_profit),2), round(tot_profit / prices[0],2)
     
 def bollingerband(prices):
@@ -99,7 +99,7 @@ def bollingerband(prices):
                     pass
                 else:
                     if i == len(prices) -1:
-                        print(ticker, "Buy today at:", buy, " BB")
+                        print("BB", ticker, "Buy today at:", buy)
                     tot_profit += sell - buy
                    
             elif price < avrage*1.05 and position != -1:
@@ -109,7 +109,7 @@ def bollingerband(prices):
                     pass
                 else:
                     if i == len(prices) -1:
-                        print(ticker, "Sell today at:", sell, " BB")
+                        print("BB", ticker, "Sell today at:", sell)
                     tot_profit += sell - buy
                     
             else:
@@ -117,10 +117,10 @@ def bollingerband(prices):
                 
         i += 1
         tot_profit = round(tot_profit,2)
-    print(ticker, "Total profit: ", tot_profit, " BB")
+    print("BB", ticker, "Total profit: ", tot_profit)
     return round((tot_profit),2), round(tot_profit / prices[0],2)
 
-print("Ticker, Buy/Sell, Price, Trading Strategy")
+print("Strategy, Ticker, Buy/Sell, Price")
 print("-------------------------------------------")
 most_profit = 0
 results = {}
@@ -148,7 +148,7 @@ for ticker in tickers:
 print("--------------------------------")
 print("The most profitable trading strategy was", max(results, key=results.get))
    
-json.dump(results, open("results.json", "w"))
+json.dump(results, open("final_project_results.json", "w"))
 
 
 

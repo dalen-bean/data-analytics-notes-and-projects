@@ -22,10 +22,11 @@ for ticker in tickers:
     write_lines = []
     for date in req_dict[key1]:
         print(date + ", " + req_dict[key1][date][key2])
-        fil.write(date + ", " + req_dict[key1][date][key2] + "\n")
-        # write_lines.append(date + ", " + req_dict[key1][date][key2] + "\n")
+        # fil.write(date + ", " + req_dict[key1][date][key2] + "\n")
+        write_lines.append(date + ", " + req_dict[key1][date][key2] + "\n")
         
-    write_lines = write_lines[::-1]
+    # write_lines = write_lines[::-1]
+    write_lines.reverse()
     fil.writelines(write_lines)
     fil.close()
     x += 1

@@ -9,7 +9,7 @@ def append_data():
 
     for ticker in tickers:
         
-        url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + ticker[x] + '&outputsize=full&apikey=NG9C9EPVBMQTOC8'
+        url = 'http://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + tickers[x] + '&outputsize=full&apikey=NG9C9EPVBMQTOC8'
         request = requests.get(url)
         req_dict =json.loads(request.text)
         # json.dump(req_dict, open("results.json", "w"))
